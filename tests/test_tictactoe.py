@@ -41,14 +41,14 @@ class TestTicTacToe(unittest.TestCase):
     def test_valid_move(self):
         game = TicTacToe()
         try:
-            game.make_move(1, 1, 'X')  # Middle of the board should be a valid move
+            game.make_move(2, 2, 'X')  # Middle of the board should be a valid move
         except ValueError:
             self.fail("make_move() raised ValueError unexpectedly for a valid move!")
 
     def test_invalid_move_out_of_bounds(self):
         game = TicTacToe()
         with self.assertRaises(ValueError):
-            game.make_move(3, 3, 'X')  # Outside the board should raise ValueError
+            game.make_move(3, 4, 'X')  # Outside the board should raise ValueError
 
     def test_invalid_move_to_occupied_cell(self):
         game = TicTacToe()

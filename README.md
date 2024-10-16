@@ -27,9 +27,9 @@ Dive into tests and Test-Driven-Development (TDD) by sharing experience and prac
 
 # tdd_tictactoe
 
-1 - Consider starting by forking the repository so you donot push things to main. 
-2 - If you cannot fork it, just make your own branch or just develop locally. 
-3 - Use the main branch for starting up, if you think this is too much work you can also look at the complete 
-4 - There is already a failing test available for you, try to fix it and then decide if you need to refactor. 
-5 - Think about the next functionality you should write the test for, it will fail in the begining and that is the point so no worries there and then write code to fix it =) 
-6 - and ofcourse HAVE FUN !
+- Consider starting by forking the repository so you donot push things to main.
+- If you cannot fork it, just make your own branch or just develop locally. 
+- Use the main branch for starting up, if you think this is too much work you can also look at the complete 
+- There is already a failing test available for you, try to fix it and then decide if you need to refactor. 
+- Think about the next functionality you should write the test for, it will fail in the begining and that is the point so no worries there and then write code to fix it =) 
+- and ofcourse HAVE FUN !

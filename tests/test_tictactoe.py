@@ -20,6 +20,13 @@ class TestTicTacToe(unittest.TestCase):
         print("test_player_switch passed")
         
         
+    def test_player_switch_return(self):
+        game = TicTacToe()
+        self.assertEqual(game.switch_player(), "O", "The starting player should be X, so after switching the current player should be O")
+        self.assertEqual(game.switch_player(), "X", "After switching again, the current player should be X")
+        print("test_player_switch_return passed")
+        
+        
     def test_make_move(self):
         game = TicTacToe()
         self.assertEqual(game.make_move(0, 0), True, "The first move should be valid")

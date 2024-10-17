@@ -46,6 +46,23 @@ class TestTicTacToe(unittest.TestCase):
         game.make_move(0, 2)
         self.assertEqual(game.check_winner(), "X", "X should win with a top row")
         print("test_check_winner passed")
+        
+        
+    def test_draw(self):
+        game = TicTacToe()
+        self.assertEqual(game.check_draw(), False, "There should be no draw at the start of the game")
+        game.make_move(0, 0)
+        game.make_move(0, 1)
+        game.make_move(0, 2)
+        game.make_move(1, 0)
+        game.make_move(1, 1)
+        game.make_move(1, 2)
+        game.make_move(2, 0)
+        game.make_move(2, 1)
+        game.make_move(2, 2)
+        self.assertEqual(game.check_draw(), True, "The game should be a draw")
+        print("test_draw passed")
+        
 
 if __name__ == '__main__':
     unittest.main()

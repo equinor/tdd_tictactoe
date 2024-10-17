@@ -46,7 +46,31 @@
         return None
     
     
+    def check_draw(self):
+        for row in self.board:
+            for cell in row:
+                if cell == " ":
+                    return False
+        return True
+    
+    
+    def play_game(self):
+        while self.check_winner() == None:
+            
+            
+            for row in self.board:
+                print(row)
+            
+            row = int(input("Enter the row: "))
+            col = int(input("Enter the column: "))
+            self.make_move(row, col)
+            
+            
+        print(f"{self.check_winner()} wins!")
+    
 
 if __name__ == '__main__':
     game = TicTacToe()
+    game.play_game()
+    
     

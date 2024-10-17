@@ -1,11 +1,10 @@
 ﻿class TicTacToe:
     
     def __init__(self):
-        self.board =  "I AM A BOARD"
         self.current_player = "X"
               
         grid = 3
-        board  = []
+        board = []
         
         for i in range(grid):
             board.append([])
@@ -25,6 +24,8 @@
     
     
     def make_move(self, row, col):
+        row -= 1
+        col -= 1
         if self.board[row][col] == " ":
             self.board[row][col] = self.current_player
             self.switch_player()
@@ -55,22 +56,30 @@
     
     
     def play_game(self):
-        while self.check_winner() == None:
-            
+        while self.check_winner() is None and not self.check_draw():
             
             for row in self.board:
                 print(row)
             
-            row = int(input("Enter the row: "))
-            col = int(input("Enter the column: "))
-            self.make_move(row, col)
+            try:
+                row = int(input("Enter the row (1-3): "))
+                col = int(input("Enter the column (1-3): "))
+                if row not in range(1, 4) or col not in range(1, 4):
+                    print("Invalid input. Please enter a number between 1 and 3.")
+                    continue
+            except ValueError:
+                print("Invalid input. Please enter numbers only.")
+                continue
+
+            if not self.make_move(row, col):
+                print("Invalid move, cell is already taken.")
             
-            
-        print(f"{self.check_winner()} wins!")
-    
+        winner = self.check_winner()
+        if winner:
+            print(f"{winner} wins!")
+        else:
+            print("It's a draw!")
 
 if __name__ == '__main__':
     game = TicTacToe()
     game.play_game()
-    
-    
